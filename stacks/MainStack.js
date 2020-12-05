@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import SignUpScreen from '../screens/User/SignUp/SignUpScreen'
 import SignInScreen from '../screens/User/SignIn/SignInScreen'
 import HomeScreen from '../screens/Home/HomeScreen'
-import LeftDrawer from './HomeStack/LeftDrawer'
+import RightDrawer from './HomeStack/RightDrawer'
 
 const Stack = createStackNavigator();
 export default function TabNavigator() {
@@ -13,7 +13,7 @@ export default function TabNavigator() {
         <Stack.Navigator headerMode="none" initialRouteName="SignIn">
             <Stack.Screen name="SignIn" component={SignInScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />
-            <Stack.Screen name="Home" component={LeftDrawer} />
+            <Stack.Screen name="Home" component={RightDrawer} />
         </Stack.Navigator>
     );
 }

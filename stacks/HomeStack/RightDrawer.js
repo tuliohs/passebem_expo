@@ -6,9 +6,9 @@ import StepScreen from '../../screens/Step/StepScreen'
 import TutorialScreenn from '../../screens/Tutorial/TutorialScreen'
 import ScheduleScreen from '../../screens/Schedule/ScheduleScreen'
 
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator()
 
-export default function LeftDrawer() {
+export default function RightDrawer() {
 
     return <Drawer.Navigator drawerPosition="right">
         <Drawer.Screen name="Home" component={HomeStack} />

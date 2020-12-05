@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         //marginTop: Constants.statusBarHeight,
         backgroundColor: THEME.PRIMARY,
         alignItems: 'center',
-        justifyContent: 'center',
+        //justifyContent: 'center',
     },
     addItem: {
         backgroundColor: '#368c8c',

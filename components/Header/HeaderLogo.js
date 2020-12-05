@@ -8,7 +8,7 @@ import { Entypo } from '@expo/vector-icons';
 
 const HeaderUp = ({ drawerPress, title, subTitle, onPress }) => {
     return (
-        <View style={{ flex: 1, }}>
+        <View >
             <View style={styles.header1}>
                 <Image source={logo} style={{ width: 50, height: 50, marginLeft: 12 }} />
                 <Text style={styles.titulo}>{title}</Text>
@@ -33,6 +33,7 @@ export default HeaderUp
 const styles = StyleSheet.create({
     header1: {
         //flex: 1,
+
         width: "100%",
         backgroundColor: THEME.PRIMARY,// '#368c8c',
         //display: 'flex',

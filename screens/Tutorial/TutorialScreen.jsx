@@ -5,14 +5,9 @@ import HeaderLogo from '../../components/Header/HeaderLogo'
 import { Input, Block, Button } from 'galio-framework';
 import { THEME } from '../../theme/colors'
 import ImageCard from '../../components/Card/ImageCard'
-
-const items = [
-    { id: 1, title: "Camisa", sub: "Social" },
-    { id: 2, title: "Camisa", sub: "Polo" },
-    { id: 3, title: "Camisa", sub: "Curta" },
-    { id: 4, title: "Camisa", sub: "Malha" },
-    { id: 5, title: "Camisa", sub: "Lisa" },
-]
+import CardItem from '../../components/Card/CardItem'
+import { Tutorialtems } from './Items'
+import Constants from 'expo-constants'
 
 const TutorialScreen = ({ navigation }) => {
     const item = {
@@ -22,31 +17,37 @@ const TutorialScreen = ({ navigation }) => {
         horizontal: true
     }
 
-    const renderCard = ({ c }) => (
-
-        <ImageCard subTitle={"c.sub"} title={c.title} />
-    )
+    const renderItem = ({ item }) => (
+        <ImageCard title={item.title} subTitle={item.subTitle} image={item.image}
+            handleTutorial={() => navigation.navigate("Degrau")}
+        />
+    );
     return (
         <View style={styles.container}>
             <HeaderLogo title="Passe Bem" drawerPress={() => navigation.openDrawer()} />
-            {/*<View style={{ flex: 1 }}>*/}
-            <ImageCard subTitle={"c.sub"} title={"c.title"} />
-            {<FlatList
-                data={items}
-                renderItem={renderCard} />}
-            {/*</View>*/}
-        </View>
+
+            <View style={{
+                marginTop: 20,
+                width: "75%"
+            }}>
+                <FlatList
+                    data={Tutorialtems}
+                    renderItem={renderItem}
+                    keyExtractor={it => it.id} />
+            </View>
+        </View >
     )
 }
 export default TutorialScreen
 
 const styles = StyleSheet.create({
     container: {
-        //flex: 1,
-        //marginTop: Constants.statusBarHeight,
+        flex: 1,
+        marginTop: Constants.statusBarHeight + 12,
         backgroundColor: THEME.PRIMARY,
         alignItems: 'center',
         justifyContent: 'center',
+
     },
     addItem: {
         backgroundColor: '#368c8c',
