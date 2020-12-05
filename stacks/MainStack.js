@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import SignUpScreen from '../screens/User/SignUp/SignUpScreen'
 import SignInScreen from '../screens/User/SignIn/SignInScreen'
-import HomeScreen from '../screens/Home/HomeScreen'
 import RightDrawer from './HomeStack/RightDrawer'
 
 const Stack = createStackNavigator();

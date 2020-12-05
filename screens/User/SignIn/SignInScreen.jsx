@@ -4,7 +4,7 @@ import {
     View,
     TouchableOpacity,
     Text,
-    Alert
+    Alert,
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,6 +12,8 @@ import { styles } from '../styles'
 import SignInput from '../../../components/SignInput';
 import EmailIcon from '../../../assets/email.png';
 import LockIcon from '../../../assets/lock.png';
+
+import UserHeader from '../UserHeader';
 
 const LoginScreen = () => {
     const navigation = useNavigation();
@@ -31,6 +33,7 @@ const LoginScreen = () => {
     }
     return (
         <SafeAreaView style={styles.Container}>
+            <UserHeader />
             <View style={styles.InputArea}  >
                 <SignInput icon={EmailIcon}
                     placeholder="Digite seu e-mail"
@@ -46,7 +49,7 @@ const LoginScreen = () => {
                     <Text style={styles.CustomButtonText}> LOGIN</Text>
                 </TouchableOpacity>
             </View>
-            <Text style={styles.CustomButtonText}> Usuario:"admin" e Senha: "admin"</Text>
+            {/*<Text style={styles.CustomButtonText}> Usuario:"admin" e Senha: "admin"</Text>*/}
             <TouchableOpacity style={styles.SignMessageButton} onPress={() => navigation.navigate('SignUp')}>
                 <Text style={styles.SignMessageButtonText}>Criar Usuário e Senha.</Text>
                 <Text style={styles.SignMessageButtonBold}>Aqui!</Text>

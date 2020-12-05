@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet } from 'react-native'
-import HeaderUp from '../../components/Header/HeaderUp'
+import { View, StyleSheet, TouchableOpacity, FlatList, Image } from 'react-native'
 import HeaderLogo from '../../components/Header/HeaderLogo'
-import { Input, Block, Button } from 'galio-framework';
 import { THEME } from '../../theme/colors'
+import { menultems } from './Items'
 
 const HomeScreen = ({ navigation }) => {
-    const item = {
-        title: 'Ice cream is made with carrageenan …',
-        image: 'https://images.unsplash.com/photo-1516559828984-fb3b99548b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
-        cta: 'View article',
-        horizontal: true
-    }
-
+    const renderItem = ({ item }) => (
+        <TouchableOpacity onPress={() => navigation.navigate(item.route)}>
+            <Image source={item.image}
+                style={{
+                    width: 150,
+                    height: 150,
+                    margin: 18
+                }}
+            />
+        </TouchableOpacity >
+    );
     return (
         <View style={styles.container}>
             <HeaderLogo title="Passe Bem" drawerPress={() => navigation.openDrawer()} />
-
+            <FlatList
+                contentContainerStyle={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}
+                data={menultems}
+                renderItem={renderItem}
+                keyExtractor={it => it.id}
+            />
         </View>
     )
 }
@@ -30,9 +38,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         //justifyContent: 'center',
     },
-    addItem: {
-        backgroundColor: '#368c8c',
-        width: "100%",
-        padding: 5
-    }
 });

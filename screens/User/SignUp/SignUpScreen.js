@@ -14,6 +14,7 @@ import EmailIcon from '../../../assets/email.png';
 import LockIcon from '../../../assets/lock.png';
 import PersonIcon from '../../../assets/person.png';
 import SignInput from '../../../components/SignInput';
+import UserHeader from '../UserHeader';
 
 const SignUpScreen = () => {
     const navigation = useNavigation();
@@ -28,7 +29,7 @@ const SignUpScreen = () => {
 
     return (
         <SafeAreaView style={styles.Container}>
-            {/*<refTransLogo width="100%" heigth="160" />*/}
+            <UserHeader />
             <View style={styles.InputArea}>
                 <SignInput
                     icon={PersonIcon}

@@ -11,8 +11,8 @@ export default function ImageCard({ title, subTitle, image, handleTutorial }) {
             <Card.Cover source={image} />
             <Card.Actions>
                 <Button onPress={handleTutorial} >Tutorial</Button>
-                <Button>Acessar</Button>
-                <Button>Video</Button>
+                <Button onPress={handleTutorial}>Acessar</Button>
+                <Button onPress={handleTutorial}>Video</Button>
             </Card.Actions>
         </Card>
     );

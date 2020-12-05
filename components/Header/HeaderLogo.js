@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { THEME } from '../../theme/colors'
-import logo from '../../assets/passebem.png'
+import logo from '../../assets/logo.png'
 import { Feather } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
@@ -10,7 +10,9 @@ const HeaderUp = ({ drawerPress, title, subTitle, onPress }) => {
     return (
         <View >
             <View style={styles.header1}>
-                <Image source={logo} style={{ width: 50, height: 50, marginLeft: 12 }} />
+                <TouchableOpacity onPress={onPress}>
+                    <Image source={logo} style={{ width: 50, height: 50, marginLeft: 12 }} />
+                </TouchableOpacity>
                 <Text style={styles.titulo}>{title}</Text>
                 <TouchableOpacity onPress={drawerPress}>
                     <Entypo style={{ marginRight: 8 }} name="menu" size={45} color="white" />

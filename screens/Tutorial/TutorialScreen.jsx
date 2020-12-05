@@ -24,7 +24,10 @@ const TutorialScreen = ({ navigation }) => {
     );
     return (
         <View style={styles.container}>
-            <HeaderLogo title="Passe Bem" drawerPress={() => navigation.openDrawer()} />
+            <HeaderLogo title="Passe Bem"
+                drawerPress={() => navigation.openDrawer()}
+                onPress={() => navigation.navigate("Home")}
+            />
 
             <View style={{
                 marginTop: 20,
