@@ -33,6 +33,6 @@ export const menultems = [
         id: 5,
         title: "Settings",
         image: SettingsImage,
-        route: "Tutorial"
+        route: "Settings"
     }
 ]

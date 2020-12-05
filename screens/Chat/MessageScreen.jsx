@@ -17,7 +17,8 @@ export default function MessageScreen({ navigation }) {
 
     return (
         <>
-            <HeaderLogo title="Mensagens" onPress={() => navigation.navigate("Home")} />
+            <HeaderLogo title="Mensagens" drawerPress={() => navigation.openDrawer()}
+                onPress={() => navigation.navigate("Home")} />
             <GiftedChat
                 messages={messages}
                 onSend={messages => onSend(messages)}

@@ -3,7 +3,7 @@ export const messageltems = [
 
     {
         _id: 2,
-        text: 'Welcome to Passe Bem',
+        text: 'Welcome to PASSE BEM',
         createdAt: new Date(),
         user: {
             _id: 2,
@@ -13,7 +13,7 @@ export const messageltems = [
     },
     {
         _id: 1,
-        text: 'Here you go to learn',
+        text: 'Get Started PASSE BEM',
         createdAt: new Date(),
         user: {
             _id: 2,
@@ -21,7 +21,7 @@ export const messageltems = [
             avatar: 'https://placeimg.com/140/140/any',
         },
     }, {
-        _id: 2,
+        _id: 3,
         text: 'Hello',
         createdAt: new Date(),
         user: {
